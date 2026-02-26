@@ -1,4 +1,4 @@
-# QA Automation Portfolio
+# ui-cypress-framework
 
 This repository showcases a real-world QA automation portfolio demonstrating
 enterprise-level UI and API testing practices.
