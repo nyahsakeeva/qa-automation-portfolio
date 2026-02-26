@@ -29,4 +29,24 @@ jobs:
       - name: Run Cypress tests
         run: npx cypress run
 
-      # 📸 Upload screenshots ONLY if tes
+
+            #  Upload artifacts ONLY if tests failed
+      - name: Upload Cypress screenshots (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots/**
+          if-no-files-found: ignore
+
+      - name: Upload Cypress videos (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos/**
+          if-no-files-found: ignore
+
+     
+
+     
